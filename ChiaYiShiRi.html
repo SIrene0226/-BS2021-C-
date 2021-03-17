@@ -19,17 +19,12 @@
             width: 40%;
         }
 
-        .new{
+        .tag{
             width: 1200px;
             margin: 50px auto 30px;
         }
-        .best{
-            width: 1200px;
-            margin: 50px auto 30px;
-        }
-        .limit{
-            width: 1200px;
-            margin: 50px auto 30px;
+        .tag > img{
+            margin: 50px auto;
         }
         .media{
             width: 1200px;
@@ -38,6 +33,14 @@
             flex-direction: row;
         }
 
+        nav{
+            font-size: 0;
+            text-align: center;
+        }
+        nav p{
+            display: inline-block;
+            font-size: 16px;
+        }
         p{
             color: gray;
         }
@@ -46,6 +49,9 @@
         }
         h4{
             color: rgb(70, 70, 70);
+        }
+        img{
+            width: 100%;
         }
 
         .choose{
@@ -59,38 +65,49 @@
             margin: 10px;
             text-align: center;
         }
+        /* .add{
+            height: 30px;
+            background-color: #000;
+            color: beige;
+            margin: auto;
+            /* position: absolute; */
+            /* bottom: 0; */
+            /* text-align: center;
+            transition: 50%; */
+        /*} */
+        /* img:hover{
+            當摸到圖片的時候， .add就要hover動畫出來（transition?）
+        } */
+
         .product{
-            width: 1170px;
-            margin: 15px;
-            /* background-color: red; */
-        }
-        .product img{
-            width: 100%;
+            width: 1200px;
         }
         .product.two{
+            width: 1200px;
             display: flex;
             flex-direction: row;
             /* background-color: #faa; */
         }
-        .product.two>div{
+        .product.two  div{
             width: 570px;
             margin: 15px;
         }
-        .product.two img{
-            width: 100%;
+        .product.two.half{
+            display: flex;
+            flex-wrap: wrap;
         }
-        
+        .product.two_half>div{
+            width: 570px;
+            margin: 15px;
+        }
         .product.three{
             display: flex;
-            flex-direction: row;
+            flex-direction: wrap;
             /* background-color: #aaf; */
         }
         .product.three>div{
             width: 370px;
             margin: 15px;
-        }
-        .product.three img{
-            width: 100%;
         }
         .media img{
             width: 275px;
@@ -101,7 +118,7 @@
         }
         .video.two{
             display: flex;
-            flex-direction: row;
+            flex-direction: wrap;
             margin: auto;
             width: 1200px;
         }
@@ -112,7 +129,7 @@
         }
         .video.three{
             display: flex;
-            flex-direction: row;
+            flex-direction: wrap;
             margin: auto;
             width: 1200px;
             height: 250px;
@@ -130,27 +147,29 @@
         <hr width="100%"><!-- hr是線 面可以設定粗細 以及長度 -->
     </div>
 
-    <div class="choose">
+    <nav class="choose">
         <p>食我-ABOUT US</p>
         <p>食麵-NOODLES</p>
         <p>食事-EVENT</p>
         <p>食品味-GOOD SENSE</p>
         <p>食影音-VIDEOS</p>
         <p>國際專區-OVERSEAS</p>
-    </div>
+    </nav>
 
-    <div class="new">
+    <div class="tag">
         <img src="../ChiaPic/1200x.png" alt="新品上市">
 
         <div class="product two">
             <div>
                 <img src="../ChiaPic/1.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-拌雙粉 醋香豆瓣 (1袋/3入)</h4>
                 <del class="p1">NT249$</del>
                 <p class="p2">NT230$</p>
             </div>
             <div>
                 <img src="../ChiaPic/2.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-拌雙粉 醋香豆瓣 (16袋/48入)</h4>
                 <del class="p1">NT$3984</del>
                 <p class="p2">NT$3580</p>
@@ -159,6 +178,7 @@
 
         <div class="product">
             <img src="../ChiaPic/3.png" alt="">
+            <div class="add">加入購物車</div>
             <h4 class="productName">賈以食日-角落小夥伴 寶貝麵三入綜合提袋組</h4>
             <del class="p1">NT$530</del>
             <p class="p2">NT$499</p>
@@ -167,16 +187,19 @@
         <div class="product three">
             <div>
                 <img src="../ChiaPic/4.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-角落小夥伴 寶貝麵(經典原味)</h4>
                 <p class="p2">NT$159</p>
             </div>
             <div>
                 <img src="../ChiaPic/5.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-角落小夥伴 寶貝麵(綜合蔬菜)</h4>
                 <p class="p2">NT$159</p>
             </div>
             <div>
                 <img src="../ChiaPic/6.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-角落小夥伴 寶貝麵(南瓜地瓜)</h4>
                 <p class="p2">NT$159</p>
             </div>
@@ -185,12 +208,14 @@
         <div class="product two">
             <div>
                 <img src="../ChiaPic/7.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-干貝鍋燒意麵</h4>
                 <del class="p1">NT$150</del>
                 <p class="p2">NT$138</p>
             </div>
             <div>
                 <img src="../ChiaPic/8.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-干貝鍋燒意麵 (1箱/16盒)</h4>
                 <del class="p1">NT$2400</del>
                 <p class="p2">NT$2080</p>
@@ -200,12 +225,14 @@
         <div class="product two">
             <div>
                 <img src="../ChiaPic/9.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-泰式酸辣粉 (1盒/3入)</h4>
                 <del class="p1">NT$238</del>
                 <p class="p2">NT$220</p>
             </div>
             <div>
                 <img src="../ChiaPic/10.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-泰式酸辣粉 (1箱/16入)</h4>
                 <del class="p1">NT$3808</del>
                 <p class="p2">NT$3360</p>
@@ -213,53 +240,60 @@
         </div>
     </div>
 
-     <div class="best">
+     <div class="tag">
         <img src="../ChiaPic/1200x(1).png" alt="精選商品">
 
         <div class="product three">
             <div>
                 <img src="../ChiaPic/11.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-麻花麵(1袋/4入)</h4>
                 <p class="p2">NT$268</p>
             </div>
             <div>
                 <img src="../ChiaPic/12.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-燒椒麵(1袋/4入)</h4>
                 <p class="p2">NT$268</p>
             </div>
             <div>
                 <img src="../ChiaPic/13.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-麻薑麵(1袋/4入)</h4>
                 <p class="p2">NT$268</p>
             </div>
         </div>
 
-        <div class="product two">
+        <div class="product two half">
             <div>
                 <img src="../ChiaPic/14.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-麻辣鴨血冬粉</h4>
                 <p class="p2">NT$159</p>
             </div>
             <div>
                 <img src="../ChiaPic/15.png" alt="">
+                <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-麻辣鴨血冬粉 (1箱/20盒)</h4>
                 <p class="p2">NT$3180</p>
             </div>
-        </div>
-
-        <div class="product">
-            <img src="../ChiaPic/16.png" alt="">
-            <h4 class="productName">賈以食日-雪莓餅 (期間限定, 售完為止)</h4>
-            <del class="p1">NT$250</del>
-            <p class="p2">NT$230</p>
+            <div>
+                <img src="../ChiaPic/16.png" alt="">
+                <div class="add">加入購物車</div>
+                <h4 class="productName">賈以食日-雪莓餅 (期間限定, 售完為止)</h4>
+                <del class="p1">NT$250</del>
+                <p class="p2">NT$230</p>
+            </div>
         </div>
     </div>
+        
 
-    <div class="limit">
+    <div class="tag">
         <img src="../ChiaPic/1200x(2).png" alt="限時優惠">
 
         <div class="product">
             <img src="../ChiaPic/17.png" alt="">
+            <div class="add">加入購物車</div>
             <h4 class="productName">賈以食日-2021 HAPPY 牛 YEAR 福箱</h4>
             <p class="p2">NT$999</p>
         </div>
