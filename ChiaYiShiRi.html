@@ -53,7 +53,11 @@
         img{
             width: 100%;
         }
-
+        footer{
+            text-align: center;
+            margin: 50px auto 80px;
+            color: gray;
+        }
         .choose{
             width: 1200px;
             margin: 50px auto 30px;
@@ -138,26 +142,40 @@
             width: 100%;
             margin: 15px;
         }
-        
+        .product.product_end >img{
+            opacity: .5;
+        }
+        .sr-only{
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="ChiaPic/x140.png" alt="logo">
+        <img src="ChiaPic/x140.png" alt="logo" title="Logo">
         <hr width="100%"><!-- hr是線 面可以設定粗細 以及長度 -->
     </div>
 
     <nav class="choose">
-        <p>食我-ABOUT US</p>
-        <p>食麵-NOODLES</p>
-        <p>食事-EVENT</p>
-        <p>食品味-GOOD SENSE</p>
-        <p>食影音-VIDEOS</p>
-        <p>國際專區-OVERSEAS</p>
+        <li><a href="javascript:;">食我-ABOUT US</a></li>
+        <li><a href="javascript:;">食麵-NOODLES</a></li>
+        <li><a href="javascript:;">食事-EVENT</a></li>
+        <li><a href="javascript:;">食品味-GOOD SENSE</a></li>
+        <li><a href="javascript:;">食影音-VIDEOS</a></li>
+        <li><a href="javascript:;">國際專區-OVERSEAS</a></li>
     </nav>
 
     <div class="tag">
-        <img src="../ChiaPic/1200x.png" alt="新品上市">
+        <!-- <img src="../ChiaPic/1200x.png" alt="新品上市"> -->
+        <div class="title">
+            <h1>
+                <span class="sr-only">最新商品</span>
+                <img src="../ChiaPic/1200x.png" alt="新品上市">
+            </h1>
+        </div>
 
         <div class="product two">
             <div>
@@ -165,14 +183,14 @@
                 <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-拌雙粉 醋香豆瓣 (1袋/3入)</h4>
                 <del class="p1">NT249$</del>
-                <p class="p2">NT230$</p>
+                <ins class="p2">NT230$</ins><!--ins通常都会和del一起用，表示新增了能替代掉del的东西 -->
             </div>
             <div>
                 <img src="../ChiaPic/2.png" alt="">
                 <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-拌雙粉 醋香豆瓣 (16袋/48入)</h4>
                 <del class="p1">NT$3984</del>
-                <p class="p2">NT$3580</p>
+                <ins class="p2">NT$3580</ins>
             </div>
         </div>
 
@@ -211,14 +229,14 @@
                 <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-干貝鍋燒意麵</h4>
                 <del class="p1">NT$150</del>
-                <p class="p2">NT$138</p>
+                <ins class="p2">NT$138</ins>
             </div>
             <div>
                 <img src="../ChiaPic/8.png" alt="">
                 <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-干貝鍋燒意麵 (1箱/16盒)</h4>
                 <del class="p1">NT$2400</del>
-                <p class="p2">NT$2080</p>
+                <ins class="p2">NT$2080</ins>
             </div>
         </div>
 
@@ -228,14 +246,14 @@
                 <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-泰式酸辣粉 (1盒/3入)</h4>
                 <del class="p1">NT$238</del>
-                <p class="p2">NT$220</p>
+                <ins class="p2">NT$220</ins>
             </div>
             <div>
                 <img src="../ChiaPic/10.png" alt="">
                 <div class="add">加入購物車</div>
                 <h4 class="productName">賈以食日-泰式酸辣粉 (1箱/16入)</h4>
                 <del class="p1">NT$3808</del>
-                <p class="p2">NT$3360</p>
+                <ins class="p2">NT$3360</ins>
             </div>
         </div>
     </div>
@@ -291,7 +309,7 @@
     <div class="tag">
         <img src="../ChiaPic/1200x(2).png" alt="限時優惠">
 
-        <div class="product">
+        <div class="product product_end">
             <img src="../ChiaPic/17.png" alt="">
             <div class="add">加入購物車</div>
             <h4 class="productName">賈以食日-2021 HAPPY 牛 YEAR 福箱</h4>
@@ -316,8 +334,10 @@
         <img src="../ChiaPic/400x(3).png" alt="Line">
         <img src="../ChiaPic/400x(4).png" alt="Partner">
     </div>
+
     <footer>
-        <p style="text-align: center;margin: 50px auto 80px;" >隱私權聲明| 服務條款 | 2018 © 賈以食日 拾躍創意國際有限公司 02-2579-2323</p>
+        <a href="javascript:;">隱私權聲明</a>|
+        <a href="javascript:;">服務條款</a>| 2018 © 賈以食日 拾躍創意國際有限公司 02-2579-2323
     </footer>
 </body>
 </html>
