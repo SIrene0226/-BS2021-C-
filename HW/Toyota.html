@@ -36,7 +36,7 @@
     padding: 5px;
 }
 
-.container:nth-child(even){
+.container{
     width: 61%;
     min-height: 700px;
     height: auto;
@@ -57,7 +57,7 @@
     justify-content: center;
     overflow: visible;
 }
-.container:nth-child(even) .box{
+.container .box{
     /* width: 100%; */
     height: 100%;
     display: flex;
@@ -80,7 +80,7 @@
     color: white;
     /* margin-bottom: 250px; */
 }
-.container:nth-child(even) .reason .title{
+.container .reason .title{
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -147,7 +147,7 @@
     color: tomato;
 }
 
-.container:nth-child(even) .bgImg{
+.container .bgImg{
     width: 800px;
     height: 500px;
     background-image: url(ToyotaImg/OvnjcDAfH9U7AMv.jpg);
@@ -169,7 +169,7 @@
     top: 100px;
     z-index: 1;
 }
-.container:nth-child(even) .bgImg .yt{
+.container .bgImg .yt{
     width: 70px;
     height: 50px;
     position:absolute;
@@ -188,7 +188,7 @@
     height: 60px;
 }
 
-.container:nth-child(even) .empty{
+.container .empty{
     width: 600px;
     height: 350px;
     margin: 40px 0 auto auto;
@@ -203,6 +203,37 @@
     </style>
 </head>
 <body>
+    <div class="problem">
+        <ol>
+            <li>不可以直接使用li，语义很重要！直接用li的语义是什么？？ol/ul呢？</li>
+            <li>点点后面的字怎么可以文绕图？ 要一起缩排！</li>
+            <li>点点除了li还可以用图片做</li>
+            <li>放大后，container里面的东西没办法是一块（不要用w100%，而是固定的宽960px）</li>
+        </ol>
+    </div>
+    <br>
+    <div class="Teachers">
+        <ol>
+            <li>整个container用section/article</li>
+            <li>container里面分成3个部分（01区，图片区，主要内容区）</li>
+            <li>01区块：分成2块（标题，标题内容），在标题那边利用span把2个不同的字体分开来个别设定（h2包着）</li>
+            <li>图片区：主要内容只有车，灰色的部分再用偏移跑出去就好了</li>
+            <li>用flex col放下来后判断里面区块（横向）的宽度大约是多少再去设定会比较好</li>
+            <li>图片区宽度：960px的2/3；包着图片的容器和图片（车）都要设宽度为多少（100%）</li>
+            <li>车和youtue的标签用margin-right：-8.33333%用出来（8.33333）</li>
+            <li>把01区块里面的黑色部分设absolute，下面的图片就会跑上去贴齐红色了（整个标题区块是relative）</li>
+            <li>记得标题的黑色部分要</li>
+            <li>图片的宽度是3/4，所以空位是1/4，我想把1/4分成：3份，2份左，1份右（就是分好后用这样分法去计算空间是多少，不是用猜的）</li>
+            <li>最下面的文字区块在把它relative后向上跑上去就好了（top：2em）</li>
+            <li>最后在把even的东西做相反就好了</li>
+            <li>图片后面的的灰色区块在做absolute定图片的右上角（要凸出去用-）</li>
+            <li>图片再用z-index去调整上下的位置</li>
+            <li>把“我们做了这些革新的”的那行里面做成2个区块，flex row</li>
+            <li>下面文字区块的红色横线可用1px的div做出来 ，然后用flex-grow把剩余的空间填满</li>
+            <li>小红点的做法1) 利用假图去生成红的圆点（bg-img+不要重复(bg-repeat:no-repeat)+位置background-position：0.4em 0.6em）最后再把整个p paddingleft:1em就可以对其圆点了</li>
+            <li>小红点的做法2) 用伪元素before去加入点点（content:'特殊符号'+text-indent (一个是before里面的东西要出去（-1em），before的父类不动（0） ) 和对其左边排好padding-left</li>
+        </ol>
+    </div>
     <div class="BigTitle">
         <h1>五大優勢</h1>
         <div class="nav">
