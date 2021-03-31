@@ -1,14 +1,16 @@
-/* .header{
-    max-width: 1200px;
+.message{
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    border-radius: 50%;
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    background-color: rgb(52, 106, 253);
+    z-index: 2;
 }
-.header .c-brand{
-    width: 30%!important;
-    background-color: #aff;
-}
-.flex-row{
-    display: flex;
-    flex-direction: row;
-} */
 .header-wrap{
     display: flex;
     height: 75vh;
@@ -71,7 +73,9 @@
 }
 
 .header-btn{
-    margin: 0 auto 100px auto;
+    margin: 0 auto 100px;
+    display: flex;
+    justify-content: space-between;
 }
 .header-btn button{
     height: 50px;
@@ -204,10 +208,10 @@
     border-top: 3px solid rgb(36, 35, 35);
 }
 .footer .wrap{
-    padding: 10px 20px;
+    padding: 10px 20px 0;
 }
 .footer .wrap .info{
-    width: 400px;
+    width: 480px;
     margin: 30px 0;
 }
 .footer .wrap .info address{
@@ -240,4 +244,13 @@
 }
 .footer .law p{
     margin: 0;
+}
+.footer button{
+    width: 1160px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
 }
