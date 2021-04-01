@@ -155,7 +155,7 @@
 .subtitle{
     height: 127px;
     background-image: url(https://static.wixstatic.com/media/5b7e139d046c40c1a1acde7162607721.jpg/v1/fill/w_1901,h_127,al_c,q_80,usm_0.66_1.00_0.01/5b7e139d046c40c1a1acde7162607721.webp);
-    background-color: rgb(73, 73, 167);
+    background-color: rgb(65, 65, 143);
     opacity: .7;
     background-blend-mode: multiply;
     color: white;
@@ -188,7 +188,7 @@
     margin: 0 auto;
 }
 .card-group .card i{
-    font-size: 120px;
+    font-size: 110px;
 }
 .card-group .card-body h4{
     color: crimson;
