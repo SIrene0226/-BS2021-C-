@@ -34,7 +34,8 @@
     </div>
     <div class="container">
         <div class="box w-50" id="img">
-            <!-- <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956148115" alt="" class="w-100"> -->
+            <img id="proImg" alt="" style="width: 100%;;padding: 30px 20px;">
+            <!-- src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956148115" -->
         </div>
         <div class="box w-50" id="info">
             <!-- <div class="color">
@@ -84,6 +85,37 @@
                 </div>
             </div>
             <p id="price">$$$</p> -->
+            <!-- <form action="">
+                    
+                    <label for="btn1" style="width:80px;height: 90px;border: 1px solid grey; padding: 5px 10px;">
+                        <input type="radio" name="c" id="btn1" style="visibility: visible;position: fixed;z-index: -1;"></input>
+                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
+                        <p>黃色</p>
+                    </label>
+                <div class="box">
+                    <input type="radio" name="c" id="btn" style="visibility: hidden;position: fixed;z-index: -1;"></input>
+                    <label for="btn">
+                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
+                        <p>Red</p>
+                    </label>
+                </div>
+            </form>
+            <form action="">
+                <div class="box">
+                    <input type="radio" name="a" id="mm" style="visibility: hidden;position: fixed;z-index: -1;"></input>
+                    <label for="mm" style="width:80px;height: 90px;border: 1px solid grey; padding: 5px 10px;">
+                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
+                        <p>12</p>
+                    </label>
+                </div>
+                <div class="box">
+                    <input type="radio" name="a" id="nn" style="visibility: hidden;position: fixed;z-index: -1;"></input>
+                    <label for="nn">
+                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
+                        <p>34</p>
+                    </label>
+                </div>
+            </form> -->
         </div>
     </div>
     <!-- 刻好畫面後要做動態：注意點：1. 做到多選的功能好像input：radio才做到 btn可能要大改 -->
@@ -104,73 +136,90 @@
                     {color:'紫色',colorValue:'#D1CDDB',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-purple-select-2019?wid=470&hei=556&fmt=png-alpha&.v=1566960958082'},
                     {color:'紅色',colorValue:'#BA0C2F',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-red-select-2019?wid=470&hei=556&fmt=png-alpha&.v=1566956144763'},
                 ],
-                Spec:{
-                    Storage:[
-                        {size:'64',price:'19900'},
-                        {size:'128',price:'21500'},
-                        {size:'256',price:'25000'}
-                    ]
-                }
+                Storage:[
+                    {size:'64',price:'19900'},
+                    {size:'128',price:'21500'},
+                    {size:'256',price:'25000'}
+                ]
             },
             // IPad:{},
             // Mac:{}
         }
 
+        function Click(imgUrl){
+            proImg.setAttribute('src',`${imgUrl}`);
+        };
+
+        // <label for="btn1" style="width:80px;height: 90px;border: 1px solid grey; padding: 5px 10px;">
+        //                 <input type="radio" name="c" id="btn1" style="visibility: visible;position: fixed;z-index: -1;"></input>
+        //                 <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
+        //                 <p>黃色</p>
+        //             </label>
         let btnPhone=document.getElementById("iphone");
         btnPhone.addEventListener("click",function(){
-            document.querySelector("#img");
-            img.innerHTML=`<img src="${Product.Iphone.Detail.baseImgUrl}" alt="IPhone預設圖片" class="w-100 p-25">`;
+            let proImg =document.getElementById("proImg");
+            proImg.setAttribute('src',`${Product.Iphone.Detail.baseImgUrl}`);
 
-            document.querySelector("#info");
+            let info = document.getElementById("info");
             info.innerHTML=`<h1>購買 ${Product.Iphone.Detail.productName}</h1><br>`;
 
             info.innerHTML+=`<h3>選擇外觀。</h3>`;
-            Product.Iphone.Case.forEach((item, index)=>{
-                let btn=document.createElement("button");
-                btn.setAttribute('class','btn w-25 pt-3 bg-transparent btn-outline-secondary me-3 mb-3');
-                btn.setAttribute('style','height: 100px;')
-
-                let circle=document.createElement("div");
-                circle.setAttribute('class','rounded-pill mx-auto mb-1');
-                circle.setAttribute('style',`width: 40px;height: 40px;background-color: ${item.colorValue};`)
-
-                let btn_name=document.createElement("p");
-                btn_name.innerText=item.color;
-
-                btn.appendChild(circle);
-                btn.appendChild(btn_name);
-
-                info.appendChild(btn);
-            });
             
+            let form = document.createElement("form");
+            Product.Iphone.Case.forEach((item, index)=>{
+                let btnC = document.createElement("label");
+                btnC.setAttribute('class','w-25 pt-3 bg-transparent me-3 mb-3');
+                btnC.setAttribute('style','height: 100px;border: 1px solid grey');
+                
+
+                let input = document.createElement("input");
+                input.setAttribute('type','radio');
+                input.setAttribute('name','color');
+                input.setAttribute('style','visibility: hidden;position: fixed;z-index: -1;');
+
+                let circle = document.createElement("div");
+                circle.setAttribute('class','rounded-pill mx-auto mb-1');
+                circle.setAttribute('style',`width: 40px;height: 40px;background-color: ${item.colorValue};`);
+                
+                let btn_name = document.createElement("p");
+                btn_name.setAttribute('style','text-align: center;');
+                btn_name.innerText = item.color;
+
+                btnC.appendChild(input);
+                btnC.appendChild(circle);
+                btnC.appendChild(btn_name);
+                btnC.setAttribute('onclick',`Click("${item.imgUrl}")`);
+                form.appendChild(btnC);
+            });
+            info.appendChild(form);
             info.innerHTML+=`<div style="width:80%;height:1px;background-color:grey;"></div><br>`;
 
             info.innerHTML+=`<h3>選擇儲存容量。</h3>`;
-            Product.Iphone.Spec.Storage.forEach((item, index)=>{
+            Product.Iphone.Storage.forEach((item, index)=>{
                 let btnS=document.createElement("button");
                 btnS.setAttribute('class','btn w-25 pt-3 bg-transparent btn-outline-secondary me-3 mb-3 ');
-                // btnS.querySelector('.btn:hover','btn-outline-secondary');
                 btnS.setAttribute('style','height: 100px;');
-                
 
-                let gb=document.createElement("p");
-                gb.innerText=`${item.size}GB**`;
+                let gbBtn=document.createElement("p");
+                gbBtn.innerText=`${item.size}GB**`;
 
                 let stor_pri=document.createElement("p");
                 stor_pri.innerText=`NT$${item.price}`;
 
-                btnS.appendChild(gb);
+                btnS.appendChild(gbBtn);
                 btnS.appendChild(stor_pri);
 
+                btnS.addEventListener('click',function(){
+                    // alert("hi");
+                    final_pri.innerText=`NT$${item.price}`;
+                });
+                // console.dir(btnS);
                 info.appendChild(btnS);
             });
 
             let final_pri=document.createElement("p");
-
-            // let Sbtn=document.querySelector("")
-            // .addEventListener("click",function(){
-            //     info.innerHTML+=`<h3>NT$ ${this.price}</h3>`;
-            // })
+            final_pri.setAttribute('style','font-size:50px');
+            info.appendChild(final_pri);
         });
     </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
