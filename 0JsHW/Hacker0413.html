@@ -21,20 +21,26 @@
         .container .box{
             flex-grow: 1;
         }
+        .active{
+            outline: 5px solid rgba(114, 113, 113, 0.658);
+        }
+        .check:checked ~ label{
+            outline: 5px solid rgba(114, 113, 113, 0.658);
+        }
     </style>
     </head>
     <body>
         
     <div class="container header">
         <div class="btn-group">
-            <button class="btn btn-secondary" id="iphone">IPhone</button>
-            <button class="btn btn-secondary" id="ipad">IPad</button>
-            <button class="btn btn-secondary" id="mac">Mac</button>
+            <button class="btn btn-secondary" id="iphone" value="IPhone">IPhone</button>
+            <button class="btn btn-secondary" id="ipad" value="IPad">IPad</button>
+            <button class="btn btn-secondary" id="mac" value="Mac">Mac</button>
         </div>
     </div>
     <div class="container">
         <div class="box w-50" id="img">
-            <img id="proImg" alt="" style="width: 100%;;padding: 30px 20px;">
+            <img id="productImg" alt="" style="width: 100%;;padding: 30px 20px;">
             <!-- src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956148115" -->
         </div>
         <div class="box w-50" id="info">
@@ -146,36 +152,27 @@
             // Mac:{}
         }
 
-        function Click(imgUrl){
-            proImg.setAttribute('src',`${imgUrl}`);
-        };
-
-        // <label for="btn1" style="width:80px;height: 90px;border: 1px solid grey; padding: 5px 10px;">
-        //                 <input type="radio" name="c" id="btn1" style="visibility: visible;position: fixed;z-index: -1;"></input>
-        //                 <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
-        //                 <p>黃色</p>
-        //             </label>
         let btnPhone=document.getElementById("iphone");
         btnPhone.addEventListener("click",function(){
-            let proImg =document.getElementById("proImg");
-            proImg.setAttribute('src',`${Product.Iphone.Detail.baseImgUrl}`);
+            var productImg = document.getElementById("productImg");
+            productImg.setAttribute('src',`${Product.Iphone.Detail.baseImgUrl}`);
 
             let info = document.getElementById("info");
             info.innerHTML=`<h1>購買 ${Product.Iphone.Detail.productName}</h1><br>`;
 
             info.innerHTML+=`<h3>選擇外觀。</h3>`;
             
-            let form = document.createElement("form");
+            //let form = document.createElement("form");
             Product.Iphone.Case.forEach((item, index)=>{
                 let btnC = document.createElement("label");
-                btnC.setAttribute('class','w-25 pt-3 bg-transparent me-3 mb-3');
+
+                btnC.setAttribute('class','color-label w-25 pt-3 bg-transparent me-3 mb-3');
                 btnC.setAttribute('style','height: 100px;border: 1px solid grey');
-                
 
                 let input = document.createElement("input");
                 input.setAttribute('type','radio');
                 input.setAttribute('name','color');
-                input.setAttribute('style','visibility: hidden;position: fixed;z-index: -1;');
+                input.setAttribute('style','visibility: visibled;position: fixed; z-index: 2;');
 
                 let circle = document.createElement("div");
                 circle.setAttribute('class','rounded-pill mx-auto mb-1');
@@ -185,41 +182,54 @@
                 btn_name.setAttribute('style','text-align: center;');
                 btn_name.innerText = item.color;
 
-                btnC.appendChild(input);
+                // btnC.appendChild(input);
                 btnC.appendChild(circle);
                 btnC.appendChild(btn_name);
-                btnC.setAttribute('onclick',`Click("${item.imgUrl}")`);
-                form.appendChild(btnC);
+                // btnC.setAttribute('onclick',`Click("${item.imgUrl}")`);
+                btnC.addEventListener('click',function(){
+                    Array.from(document.getElementsByClassName('color-label')).forEach(x => {
+                        x.classList.remove('active');
+                    });
+                    btnC.classList.add('active');
+                    productImg.setAttribute('src',`${item.imgUrl}`);
+                });
+                
+                info.appendChild(btnC);
             });
-            info.appendChild(form);
-            info.innerHTML+=`<div style="width:80%;height:1px;background-color:grey;"></div><br>`;
+
+            // let check = document.querySelector('[name=color]:checked').parentNode;
+            // debugger;
+            // info.appendChild(form);
+            // info.innerHTML+=`<div style="width:80%;height:1px;background-color:grey;"></div><br>`;
 
             info.innerHTML+=`<h3>選擇儲存容量。</h3>`;
             Product.Iphone.Storage.forEach((item, index)=>{
-                let btnS=document.createElement("button");
-                btnS.setAttribute('class','btn w-25 pt-3 bg-transparent btn-outline-secondary me-3 mb-3 ');
-                btnS.setAttribute('style','height: 100px;');
+                let btnS=document.createElement("div");
+                btnS.setAttribute('class','Mybtn w-25 pt-3 bg-transparent me-3 mb-3');
+                btnS.setAttribute('style','height: 100px; border: 1px solid grey;');
 
                 let gbBtn=document.createElement("p");
+                gbBtn.setAttribute('style','text-align: center;');
                 gbBtn.innerText=`${item.size}GB**`;
 
                 let stor_pri=document.createElement("p");
+                stor_pri.setAttribute('style','text-align: center;');
                 stor_pri.innerText=`NT$${item.price}`;
 
                 btnS.appendChild(gbBtn);
                 btnS.appendChild(stor_pri);
 
                 btnS.addEventListener('click',function(){
-                    // alert("hi");
                     final_pri.innerText=`NT$${item.price}`;
                 });
-                // console.dir(btnS);
                 info.appendChild(btnS);
             });
 
             let final_pri=document.createElement("p");
             final_pri.setAttribute('style','font-size:50px');
             info.appendChild(final_pri);
+
+            
         });
     </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
