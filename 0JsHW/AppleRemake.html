@@ -33,98 +33,19 @@
         
     <div class="container header">
         <div class="btn-group">
-            <button class="btn btn-secondary" id="iphone" onclick="chooseProduct('IPhone')" >IPhone</button>
-            <button class="btn btn-secondary" id="ipad" value="IPad">IPad</button>
-            <button class="btn btn-secondary" id="mac" value="Mac">Mac</button>
+            <button class="btn btn-secondary" id="iphone" onclick="chooseProduct('Iphone')" >IPhone</button>
+            <button class="btn btn-secondary" id="ipad" onclick="chooseProduct('IPad')">IPad</button>
+            <button class="btn btn-secondary" id="mac" onclick="chooseProduct('Mac')">Mac</button>
         </div>
     </div>
     <div class="container">
         <div class="box w-50" id="productImg">
             <img id="imgUrl" style="width: 100%;;padding: 30px 20px;">
-            <!-- src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-white-select-2019?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1566956148115" -->
         </div>
         <div class="box w-50" id="productInfo">
-            <!-- <div class="color">
-                <h2>選擇顏色</h2>
-                <div class="col-group d-flex flex-wrap">
-                    <button class="w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <div style="width: 40px;height: 40px; background-color: antiquewhite;" class="white rounded-pill mx-auto mb-1"></div>
-                        <p>白色</p>
-                    </button>
-                    <button class="w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <div style="width: 40px;height: 40px;" class="black rounded-pill bg-dark mx-auto mb-1"></div>
-                        <p>黑色</p>
-                    </button>
-                    <button class="green w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <div style="width: 40px;height: 40px; background-color: aquamarine;" class="white rounded-pill mx-auto mb-1"></div>
-                        <p>綠色</p>
-                    </button>
-                    <button class="w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
-                        <p>黃色</p>
-                    </button>
-                    <button class="w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <div style="width: 40px;height: 40px;background-color: rgb(148, 100, 237);" class="purple rounded-pill mx-auto mb-1"></div>
-                        <p>紫色</p>
-                    </button>
-                    <button class="w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <div style="width: 40px;height: 40px;" class="white rounded-pill mx-auto mb-1 bg-danger"></div>
-                        <p>(PRODUCT)RED</p>
-                    </button>
-                </div>
-            </div> -->
-            <!-- <div class="storage">
-                <h3>選擇儲存容量。</h3>
-                <div class=" col-group d-flex flex-wrap">
-                    <button id="btn" class="w-25 pt-3 bg-transparent me-3 mb-3  " style="height: 100px;">
-                        <p><span>64</span>GB**</p>
-                        <p>NT$19,900</p>
-                    </button>
-                    <button class="w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <p><span>128</span>GB**</p>
-                        <p>NT$21,500</p>
-                    </button>
-                    <button class="w-25 pt-3 bg-transparent me-3 mb-3" style="height: 100px;">
-                        <p><span>256</span>GB**</p>
-                        <p>NT$25,000</p>
-                    </button>
-                </div>
-            </div>
-            <p id="price">$$$</p> -->
-            <!-- <form action="">
-                    
-                    <label for="btn1" style="width:80px;height: 90px;border: 1px solid grey; padding: 5px 10px;">
-                        <input type="radio" name="c" id="btn1" style="visibility: visible;position: fixed;z-index: -1;"></input>
-                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
-                        <p>黃色</p>
-                    </label>
-                <div class="box">
-                    <input type="radio" name="c" id="btn" style="visibility: hidden;position: fixed;z-index: -1;"></input>
-                    <label for="btn">
-                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
-                        <p>Red</p>
-                    </label>
-                </div>
-            </form>
-            <form action="">
-                <div class="box">
-                    <input type="radio" name="a" id="mm" style="visibility: hidden;position: fixed;z-index: -1;"></input>
-                    <label for="mm" style="width:80px;height: 90px;border: 1px solid grey; padding: 5px 10px;">
-                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
-                        <p>12</p>
-                    </label>
-                </div>
-                <div class="box">
-                    <input type="radio" name="a" id="nn" style="visibility: hidden;position: fixed;z-index: -1;"></input>
-                    <label for="nn">
-                        <div style="width: 40px;height: 40px;" class="yellow rounded-pill mx-auto mb-1 bg-warning"></div>
-                        <p>34</p>
-                    </label>
-                </div>
-            </form> -->
+            
         </div>
     </div>
-    <!-- 刻好畫面後要做動態：注意點：1. 做到多選的功能好像input：radio才做到 btn可能要大改 -->
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script>
@@ -143,13 +64,40 @@
                     {color:'紅色',colorValue:'#BA0C2F',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone11-red-select-2019?wid=470&hei=556&fmt=png-alpha&.v=1566956144763'},
                 ],
                 Storage:[
-                    {size:'64',price:'19900'},
-                    {size:'128',price:'21500'},
-                    {size:'256',price:'25000'}
+                    {size:'64GB',price:'19900'},
+                    {size:'128GB',price:'21500'},
+                    {size:'256GB',price:'25000'}
+                ]
+            },
+            IPad:{
+                Detail:{
+                    productName:'iPad',
+                    baseImgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-landing?wid=372&hei=606&fmt=jpeg&qlt=95&.v=1598913494000'
+                },
+                Case:[
+                    {color:'太空灰色',colorValue:'#B0B3B6',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-space-wifi-select?wid=470&hei=556&fmt=png-alpha&.v=1598915064000'},
+                    {color:'銀色',colorValue:'#DFE1E0',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-silver-wifi-select?wid=470&hei=556&fmt=png-alpha&.v=1598915073000'},
+                    {color:'金色',colorValue:'#EED0C2',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-gold-wifi-select?wid=470&hei=556&fmt=png-alpha&.v=1598915069000'}
+                ],
+                Storage:[
+                    {size:'32GB',price:'10500'},
+                    {size:'128GB',price:'13500'}
+                ]
+            },
+            Mac:{
+                Detail:{
+                    productName:'MacBook Pro',
+                    baseImgUrl:'https://www.apple.com/v/macbook-pro-16/c/images/meta/og__csakh451i0eq_large.png'
+                },
+                Case:[
+                    {color:'太空灰色',colorValue:'#F9F6EF',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp16touch-space-select-201911_GEO_TW?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1573165435411'},
+                    {color:'銀色',colorValue:'#DDDFDE',imgUrl:'https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/mbp16touch-silver-select-201911_GEO_TW?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1573153623825'}
+                ],
+                Storage:[
+                    {size:'512GB',price:'77900'},
+                    {size:'1TB',price:'89900'}
                 ]
             }
-            // IPad:{},
-            // Mac:{}
         }
 
         // let btn=document.getElementById("iphone");
@@ -165,22 +113,20 @@
 
         function chooseProduct(product){
             let item = selectId('imgUrl');
-            if(product=='IPhone'){
-                // item.setAttribute('src',`${Product.Iphone.Detail.baseImgUrl}`);
-                item.src = Product.Iphone.Detail.baseImgUrl;
-                // item.src = Product[product].Detail.baseImgUrl;
-            }
-            else{
-                alert("nothing");
-            }
-            
             let btn_group = document.getElementById('productInfo');
+            
+            //清空上一个
+            item.src = '';
+            btn_group.innerHTML='';
+
+            item.src = Product[product].Detail.baseImgUrl;
+            
             let title = document.createElement('h1');
-            title.innerText=`購買 ${Product.Iphone.Detail.productName}`;
+            title.innerText=`購買 ${Product[product].Detail.productName}`;
             
             btn_group.appendChild(title);
-            btn_group.appendChild(btnColor('Iphone'));
-            btn_group.appendChild(btnStorage('Iphone'));
+            btn_group.appendChild(btnColor(product));
+            btn_group.appendChild(btnStorage(product));
             // debugger;
         }
 
@@ -195,7 +141,7 @@
             chooseColorTitle.innerText='選擇外觀';
 
             colorGroup.appendChild(chooseColorTitle);
-            Product.Iphone.Case.forEach((colorBtn,index)=>{
+            Product[product].Case.forEach((colorBtn,index)=>{
                 let btn = document.createElement("label");
                 btn.setAttribute('class','color-label w-25 pt-3 bg-transparent me-3 mb-3');
                 btn.setAttribute('style','height: 100px;border: 1px solid grey');
@@ -220,11 +166,9 @@
                     btn.classList.add('active');
                     let productImg = selectId('imgUrl');
                     productImg.setAttribute('src',`${colorBtn.imgUrl}`);
-                    debugger;
+                    // debugger;
                 });
             });
-            // debugger;
-            // btn_group.appendChild(colorGroup);
             return colorGroup;
         }
         
@@ -234,14 +178,14 @@
             chooseStorageTitle.innerText='選擇儲存容量。';
 
             storageGroup.appendChild(chooseStorageTitle);
-            Product.Iphone.Storage.forEach((storageBtn,index)=>{
+            Product[product].Storage.forEach((storageBtn,index)=>{
                 let btn = document.createElement("label");
                 btn.setAttribute('class','storage-label w-25 pt-3 bg-transparent me-3 mb-3');
                 btn.setAttribute('style','height: 100px;border: 1px solid grey');
 
                 let name = document.createElement("p");
                 name.setAttribute('style','text-align: center;');
-                name.innerText = storageBtn.size+'GB';
+                name.innerText = storageBtn.size;
                 
                 let price = document.createElement("p");
                 price.setAttribute('style','text-align: center;');
